@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smriti Restaurant</title>
+<style>
+    *{padding:0; margin:0; box-sizing: border-box; font-family: sans-serif; }
+
+    body{
+        background-color: antiquewhite;
+    }
+header{
+width: 100%;
+height: 100vh;
+}
+html{
+scroll-behavior: smooth;
+}
+.nav-logo {
+        color: #eb751c;
+        font-family: "Merriweather";
+        font-weight: 800;
+        margin: 0;
+        font-size: 20pt;
+      }
+      nav ul li {
+        color: rgb(122, 41, 41);
+        list-style: none;
+        text-transform: uppercase;
+        font-family: "poppins";
+      }
+      nav ul {
+        width: 30em;
+        margin: 0;
+      }
+      nav,
+      nav ul {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      nav .search input[type="text"] {
+        border: 2px solid #eb751c;
+        background: transparent;
+        border-top-left-radius: 0.5em;
+        border-bottom-left-radius: 0.5em;
+        color: rgb(90, 23, 23);
+        font-size: 13pt;
+      }
+      nav .search input[type="text"]::placeholder {
+        color: rgb(192, 104, 104);
+        font-size: 13pt;
+        padding: 0.3em 0 0.3em 0.2em;
+        vertical-align: middle;
+      }
+      nav .search input[type="text"]:focus {
+        border: 2px solid #ac9214;
+        outline: none;
+        background: #b8aaaac5;
+      }
+      .search {
+        height: max-content;
+        display: flex;
+      }
+      .search button {
+        background: #eb751c;
+        padding: 0.5em 2.5em 0.5em 2.5em;
+        font-size: 12pt;
+        height: auto;
+        margin-left: -0.2em;
+        border: 2px solid #eb751c;
+        color: rgb(232, 203, 140);
+        font-weight: 500;
+        font-family: "poppins";
+      }
+      .search button:hover,
+      .body-content button:hover {
+        cursor: pointer;
+        background: #eb761ccb;
+      }
+      nav {
+        margin-top: 1.5em;
+      }
+      nav ul li:hover {
+        color: #eb751c;
+        cursor: pointer;
+        transition: 300ms ease-in-out;
+      }
+.menu a{
+text-decoration: none;
+font-size: 20px;
+color: rgb(82, 35, 35);
+padding: 10px 20px;
+margin: 5px;
+font-weight: bold;
+}
+.menu a:last-child{
+background: rgb(31, 179, 129);
+color: white;
+}
+.container{
+display: flex;
+justify-content: center;
+align-items: center;
+transform-style: preserve-3d;
+transform-origin: center;
+perspective: 2000px;
+}
+.left{
+    margin-top: 50pt;
+flex-basis:50%;
+animation: animate 3s linear infinite;
+}
+.container-1{
+display: flex;
+justify-content: center;
+align-items: center;
+transform-style: preserve-3d;
+transform-origin: center;
+perspective: 2000px;
+}
+.left{
+    margin-top: 50pt;
+flex-basis:50%;
+animation: animate 3s linear infinite;
+}
+@keyframes animate{
+0%{
+transform: scale(1.1);
+}
+50%{
+transform: scale(1);
+}
+100%{
+transform: scale(1.1);
+}
+}
+.right{
+flex-basis:50%;
+max-width: 400px;
+margin-left: 100px;
+}
+.right h1{
+font-size: 50px;
+}
+.right p{
+font-size: 25px;
+margin: 20px 0px;
+}
+button{
+background: rgb(240, 120, 8);
+color: white;
+font-weight: bold;
+border: none;
+outline: none;
+padding: 10px 20px;
+bottom-margin: 20px;
+}
+#Menu{
+padding: 50px 0px;
+font-size: 40px;
+text-align: center;
+}
+#P{
+padding: 50px 0px;
+font-size: 40px;
+text-align: center;
+}
+.wrapper{
+display: grid;
+grid-template-columns: repeat(4,20%);
+grid-auto-rows: minmax(200px,auto);
+grid-gap: 1em;
+justify-content: center;
+}
+.wrapper>div{
+border: 1px solid grey;
+position: relative;
+}
+.wrapper> div img{
+width: 100%;
+overflow: hidden;
+}
+.box1{
+grid-row: 1/3;
+grid-column: 1/3;
+}
+.price{
+position: absolute;
+bottom: 0;
+left: 0;
+background: black;
+color: white;
+font-size: 20px;
+}
+.wrapper> div img:hover{
+transform: scale(1.1);
+transition: 0.4s linear;
+}
+#electronics{
+padding: 80px 0px;
+}
+.electronics-row{
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+.electronics-box{
+flex-basis: 15%;
+box-shadow: 2px 3px 5px grey;
+padding: 10px;
+text-align: center;
+}
+.electronics-box img{
+width: 100%;
+}
+.electronics-box h2{
+margin: 20px 0px;
+}
+.electronics-box h3{
+background: black;
+color: white;
+padding: 10px;
+}
+.electronics-box:hover{
+transform: translateY(-20px);
+transition: 0.4s ease;
+}
+#footer{
+display: flex;
+justify-content: space-around;
+align-items: center;
+background: rgb(26, 133, 233);
+color: rgb(240, 217, 11);
+padding: 10px;
+}
+.menu a:hover{
+    color: brown;
+}
+.logo:hover{
+    color: rgb(78, 78, 184);
+}
+button:hover{
+    color: blueviolet;
+}
+</style>
+<script>
+    var search_btn = document.getElementById("#search-btn");
+    var search_text = document.getElementById("text-box");
+    function first() {
+      search_btn.style.background = "green";
+    }
+  </script>
+</head>
+<body>
+    <nav>
+        <h2 class="nav-logo">Sansmr Restro</h2>
+        <ul>
+          <li class="active">Home</li>
+          <li>about</li>
+          <li>menu</li>
+          <li>Order</li>
+        </ul>
+        <button>Sign Up / Login</button>
+        <div class="search">
+          <input
+            id="text-box"
+            type="text"
+            placeholder="Type to search"
+            onfocus="first();"
+          />
+          <button id="search-btn">Search</button>
+        </div>
+      </nav>
+<div class="container">
+<div class="left">
+<img src="image/9.png">
+</div>
+<div class="right">
+    <h1>Promotions</h1>
+<p>Today's Offer</p>
+<p>20% off on Fried Chicken Roast </p>
+<button>Order Now</button>
+
+</div>
+</div>
+<section id="Menu">
+<h1>Menu</h1>
+<div class="wrapper">
+<div clas="box1">
+<img src="image/1.1.png">
+<div class="price">Price: Rs.100</div>
+</div>
+<div >
+<img src="image/1.jpg">
+<div class="price">Price: Rs.120</div>
+</div>
+<div >
+<img src="image/3.png">
+<div class="price">Price: Rs.150</div>
+</div>
+<div >
+<img src="image/4.png">
+<div class="price">Price: Rs.800</div>
+</div>
+<div >
+<img src="image/5.png">
+<div class="price">Price: Rs.400</div>
+</div>
+<div >
+<img src="image/6.png">
+<div class="price">Price: Rs.100</div>
+</div>
+<div >
+<img src="image/7.png">
+<div class="price">Price: Rs.150</div>
+</div>
+<div >
+<img src="image/8.png">
+<div class="price">Price: Rs.200</div>
+</div>
+</div>
+</section>
+<div class="Popular">
+    <h1>Popular</h1>
+</div>
+<section id="electronics">
+<div class="electronics-row">
+<div class="electronics-box">
+<img src="image/9.png">
+<h2>Roasted Whole Chicken<br>Rs.900</h2>
+<h3>Add to cart</h3>
+</div>
+<div class="electronics-box">
+<img src="image/10.png">
+<h2>Chicken Cheese Pizza<br>Rs.600</h2>
+<h3>Add to cart</h3>
+</div>
+<div class="electronics-box">
+<img src="image/23.jpg">
+<h2>Chowmein<br>Rs.160</h2>
+<h3>Add to cart</h3>
+</div>
+<div class="electronics-box">
+<img src="image/31.jfif">
+<h2>Chicken Leg Piece<br>Rs.180</h2>
+<h3>Add to cart</h3>
+</div>
+<div class="electronics-box">
+<img src="image/35.jpg">
+<h2>Mutton Biryani<br>Rs.700</h2>
+<h3>Add to cart</h3>
+</div>
+</div>
+</section>
+</section>
+<section id="electronics">
+<div class="electronics-row">
+<div class="electronics-box">
+<img src="image/14.jpg">
+<h2>Cake<br>Rs.300</h2>
+<h3>Add to cart</h3>
+</div>
+<div class="electronics-box">
+<img src="image/15.jpg">
+<h2>Cup Cake<br>Rs.95</h2>
+<h3>Add to cart</h3>
+</div>
+<div class="electronics-box">
+<img src="image/16.jpg">
+<h2>Juice<br>Rs.100</h2>
+<h3>Add to cart</h3>
+</div>
+<div class="electronics-box">
+<img src="image/17.jpg">
+<h2>Mix Fruits<br>Rs310</h2>
+<h3>Add to cart</h3>
+</div>
+</div>
+</section>
+</section>
+<div class="container-1">
+    <div class="left">
+    <img src="image/28.jpg">
+    </div>
+    <div class="right">
+        <h1>Fried Chicken Leg Piece</h1>
+    <p>Big fried Chicken Leg Piece with cheese sauce, tomato sauce, onions and extra salads</p>
+    <p>30% Discount!!!</p>
+    <button>Order Now</button>
+    
+    </div>
+    </div>
+<section id="footer">
+<h2>Developed by Smriti Thapa</h2>
+<img src="images/icon.png">
+</section>
+</body>
+</html>
